@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+@font-face {
+    font-family: irsans-b;
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/irsans-b.eot);
+    src: url(../fonts/irsans-b.eot?#iefix) format("embedded-opentype"), url(../fonts/irsans-b.woff) format("woff"),
+        url(../fonts/irsans-b.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: irsans-m;
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/irsans-m.eot);
+    src: url(../fonts/irsans-m.eot?#iefix) format("embedded-opentype"), url(../fonts/irsans-m.woff) format("woff"),
+        url(../fonts/irsans-m.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: irsans-l;
+    font-style: normal;
+    font-weight: 300;
+    src: url(../fonts/irsans-l.eot);
+    src: url(../fonts/irsans-l.eot?#iefix) format("embedded-opentype"), url(../fonts/irsans-l.woff) format("woff"),
+        url(../fonts/irsans-l.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: irsans-u;
+    font-style: normal;
+    font-weight: 200;
+    src: url(../fonts/irsans-u.eot);
+    src: url(../fonts/irsans-u.eot?#iefix) format("embedded-opentype"), url(../fonts/irsans-u.woff) format("woff"),
+        url(../fonts/irsans-u.ttf) format("truetype");
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+    width: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #a5b4fc;
+    border-radius: 8px;
+    -moz-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+    -moz-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.hide-scroll::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+.rtl {
+    direction: rtl;
+}
+.font-medium {
+    font-family: irsans-m;
+}
+.font-light {
+    font-family: irsans-u;
+}
+.font-bold {
+    font-family: irsans-b;
+}
+.font-normal {
+    font-family: irsans-l;
+}
+.font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+.font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif !important;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.navbar {
+    min-height: 48px;
+    background-color: rgba(255, 255, 255, 0.25);
+    @apply flex flex-row-reverse space-x-2 space-x-reverse p-2;
+    @apply absolute z-30 inset-x-0 items-center justify-center md:justify-start;
+    @apply backdrop-blur-md;
+}
+
+.navbar .header-menu {
+    @apply list-none p-0 m-0 flex flex-row-reverse space-x-reverse;
+    @apply space-x-2 text-sm flex-grow;
+}
+
+.navbar .header-menu li a {
+    @apply text-blue-500 hover:text-white font-medium px-2 md:px-4 md:py-2 rounded-full transition-all mx-1 md:mx-2;
+}
+
+.navbar .header-menu li a.active {
+    @apply bg-blue-700;
+}
+
+.navbar .header-menu li a.active {
+    @apply text-white rounded-full transition-all mx-2;
+}
+
+.navbar .header-menu li a:hover {
+    @apply bg-blue-500;
+}
+
+.drawer-button {
+    @apply w-10 h-10 p-0 rounded-full bg-blue-600 shadow-md;
+    @apply text-white flex flex-row items-center justify-center transition-all;
+}
+
+.drawer-button:hover {
+    @apply hover:bg-blue-800 shadow-md;
+}
+
+.text-input {
+    @apply p-2 rounded-xl border-2 border-blue-200 outline-none focus:bg-blue-50;
+    @apply focus:border-blue-500 focus:shadow-md transition-all w-full;
+}
+
+.auth-card {
+    @apply md:bg-white md:border md:border-gray-100 md:shadow-xl md:shadow-blue-100 md:rounded-xl;
+    @apply flex flex-col items-stretch px-4 pb-4 space-y-2 max-w-sm 2xl:max-w-md md:mt-16 w-full pt-1;
+}
+
+.full-width-button {
+    @apply font-bold bg-blue-500 hover:bg-blue-600 hover:shadow-xl hover:shadow-blue-100;
+    @apply text-white p-2 rounded-xl w-full text-xl transition-all;
+}
+
+.drawer.open {
+    @apply inset-0 fixed bg-white max-w-xs shadow-xl z-40 shadow-blue-200 rounded-r-xl border border-blue-100;
+    @apply overflow-x-scroll;
+}
+
+.drawer .drawer-menu-item {
+    @apply font-medium text-sm rounded-xl text-right px-4 py-3 hover:bg-blue-500 hover:text-white text-gray-500;
+    @apply transition-all flex flex-row-reverse items-center space-x-2 space-x-reverse;
+}
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    opacity: 0;
+    @apply border-4 border-t-white border-r-blue-400 border-b-blue-400 border-l-blue-400;
+    -webkit-animation: spinner 1.5s linear infinite;
+    animation: spinner 1.5s linear infinite;
+}
+
+.loader.loading {
+    opacity: 1;
+    @apply border-4 border-t-white border-r-blue-400 border-b-blue-400 border-l-blue-400;
+    -webkit-animation: spinner 1.5s linear infinite;
+    animation: spinner 1.5s linear infinite;
+}
+
+.spinner-button:not(.loading) {
+    width: 100%;
+    transition-property: all;
+    transition-duration: 300ms;
+    border-radius: 0.5rem;
+}
+
+.spinner-button.loading {
+    width: 40px;
+    transition-property: all;
+    transition-duration: 300ms;
+    border-radius: 2rem;
+}
+
+.logout-button {
+    @apply flex flex-row items-center space-x-1 text-red-500 px-2 py-1 rounded-xl;
+    @apply hover:bg-red-600 hover:text-white font-medium outline-none;
+}
+
+.home-header {
+    @apply w-full pt-12;
+    @apply bg-cover md:bg-contain;
+    background-image: url("../images/orange-header-bg.svg");
+    background-repeat: no-repeat;
+}
+
+.logo {
+    @apply w-16 h-9;
+    background-image: url("../images/tvto-logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+}
+
+.button {
+    @apply font-bold;
+}
+
+.button.secondary {
+    @apply rounded-full bg-rose-500 text-white hover:bg-rose-600 transition-all hover:shadow-md;
+}
+
+.button.primary {
+    @apply rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-all hover:shadow-md;
+}
+
+.button.orange {
+    @apply rounded-full bg-amber-500 text-white hover:bg-amber-600 transition-all hover:shadow-md;
+}
+
+.header-link-logo {
+    @apply w-16 h-16 p-3 bg-white rounded-full shadow-lg border-2 border-orange-300 cursor-pointer transition-all;
+}
+
+.header-link-logo:hover {
+    @apply p-2 bg-white shadow-xl shadow-orange-400 border-orange-400 transition-all;
+}
+
+.icon-2rem {
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
+}
+
+.wizard-steps {
+    @apply mt-6 flex flex-row-reverse flex-nowrap space-x-reverse items-center overflow-x-scroll pb-6 px-2;
+}
+
+.wizard-steps hr {
+    @apply flex-grow border-t border-blue-200;
+    min-width: 1rem;
+}
+
+.wizard-steps button {
+    @apply px-4 py-2 bg-white shadow-blue-200 shadow-md rounded-xl font-medium rtl min-w-fit transition-all items-center flex flex-col space-y-2;
+}
+.wizard-steps button:is(.active) {
+    @apply bg-blue-500 text-white;
+}
